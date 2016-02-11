@@ -13,5 +13,12 @@ class EmployeeReviews < Minitest::Test
     assert Employee
   end
 
+  def test_can_create_new_department
+    a = Department.new("Marketing")
+    assert a
+    assert_equal "Marketing", a.name
+  end
+
+
 
 end
