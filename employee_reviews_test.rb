@@ -24,6 +24,13 @@ class EmployeeReviews < Minitest::Test
     assert new_employee
   end
 
+  def test_can_add_employee_to_a_department
+    a = Department.new("Marketing")
+    new_employee = Employee.new("Dan", "d@mail.com", "914", 50000.00)
+    a.add_employee(new_employee)
+    assert_equal new_employee, a.staff[0]
+  end
+
 
 
 
