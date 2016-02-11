@@ -19,6 +19,12 @@ class EmployeeReviews < Minitest::Test
     assert_equal "Marketing", a.name
   end
 
+  def test_can_create_new_employee
+    new_employee = Employee.new("Dan", "d@mail.com", "914", 50000.00)
+    assert new_employee
+  end
+
+
 
 
 end
