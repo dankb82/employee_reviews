@@ -4,8 +4,6 @@ require 'minitest/pride'
 #Note: This line is going to fail first.
 require './department'
 
-
-
 class EmployeeReviews < Minitest::Test
 
   def test_classes_exist
@@ -45,13 +43,12 @@ class EmployeeReviews < Minitest::Test
     assert_equal a.name, "Marketing"
   end
 
-
-
-
-
-
-
-
-
-
+  def test_total_department_salary
+    a = Department.new("Marketing")
+    new_employee = Employee.new("Dan", "d@mail.com", "914", 50000.00)
+    old_employee = Employee.new("Ann", "ann@mail.com", "919", 4000.00)
+    assert a.add_employee(new_employee)
+    assert a.add_employee(old_employee)
+    assert_equal a.department_salary, 54000.00
+  end
 end
