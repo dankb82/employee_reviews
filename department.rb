@@ -14,17 +14,11 @@ class Department
   def department_salary
    sum = 0
    @staff.each {|a| sum += a.salary}
-   return sum
+   sum
   end
 
   def add_employee_review(review)
     @review = review
   end
-
-
-
-
-
-
 
 end

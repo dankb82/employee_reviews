@@ -14,7 +14,7 @@ class EmployeeReviews < Minitest::Test
   def test_can_create_new_department
     a = Department.new("Marketing")
     assert a
-    assert_equal "Marketing", a.name
+    assert_equal a.name, "Marketing"
   end
 
   def test_can_create_new_employee
@@ -26,21 +26,21 @@ class EmployeeReviews < Minitest::Test
     a = Department.new("Marketing")
     new_employee = Employee.new("Dan", "d@mail.com", "914", 50000.00)
     a.add_employee(new_employee)
-    assert_equal new_employee, a.staff[0]
+    assert_equal a.staff[0], new_employee
   end
   def test_can_get_employee_name
     new_employee = Employee.new("Dan", "d@mail.com", "914", 50000.00)
-    assert_equal new_employee.name, "Dan"
+    assert_equal "Dan", new_employee.name
   end
 
   def test_can_get_employee_salary
     new_employee = Employee.new("Dan", "d@mail.com", "914", 50000.00)
-    assert_equal new_employee.salary, 50000.00
+    assert_equal 50000.00, new_employee.salary
   end
 
   def test_can_get_a_department_name
     a = Department.new("Marketing")
-    assert_equal a.name, "Marketing"
+    assert_equal "Marketing", a.name
   end
 
   def test_total_department_salary
@@ -49,7 +49,7 @@ class EmployeeReviews < Minitest::Test
     old_employee = Employee.new("Ann", "ann@mail.com", "919", 4000.00)
     assert a.add_employee(new_employee)
     assert a.add_employee(old_employee)
-    assert_equal a.department_salary, 54000.00
+    assert_equal 54000.00, a.department_salary
   end
 
   def test_add_employee_review
@@ -63,10 +63,11 @@ class EmployeeReviews < Minitest::Test
     assert xavier.add_employee_review(employee_review)
   end
   def test_employee_performance
-    a = Department.new("Marketing")
     new_employee = Employee.new("Dan", "d@mail.com", "914", 50000.00)
     old_employee = Employee.new("Ann", "ann@mail.com", "919", 4000.00)
-    assert new_employee.employee_performance(true)
-    refute old_employee.employee_performance(false)
+    new_employee.employee_performance(true)
+    old_employee.employee_performance(false)
+    assert new_employee.satisfactory
+    refute old_employee.satisfactory
   end
 end
