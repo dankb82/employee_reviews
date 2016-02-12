@@ -75,4 +75,17 @@ class EmployeeReviews < Minitest::Test
     new_employee = Employee.new("Dan", "d@mail.com", "914", 50000.00)
     assert_equal  54000, new_employee.employee_raise(0.08)
   end
+  def test_give_department_raise
+    a = Department.new("Marketing")
+    xavier = Employee.new("Xavier", "ProfX@marvel.com","911", 50000.00)
+    new_employee = Employee.new("Dan", "d@mail.com", "914", 50000.00)
+    old_employee = Employee.new("Ann", "ann@mail.com", "919", 40000.00)
+    xavier.employee_performance(true)
+    old_employee.employee_performance(true)
+    new_employee.employee_performance(false)
+    a.department_raise(14000.00)
+    assert_equal 57000.00, xavier.salary
+    assert_equal 57000.00, new_employee.salary
+    assert_equal 40000.00, old_employee.salary
+  end
 end

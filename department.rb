@@ -21,4 +21,5 @@ class Department
     @review = review
   end
 
+
 end
