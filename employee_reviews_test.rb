@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-
+require 'byebug'
 #Note: This line is going to fail first.
 require './department'
 
@@ -80,9 +80,13 @@ class EmployeeReviews < Minitest::Test
     xavier = Employee.new("Xavier", "ProfX@marvel.com","911", 50000.00)
     new_employee = Employee.new("Dan", "d@mail.com", "914", 50000.00)
     old_employee = Employee.new("Ann", "ann@mail.com", "919", 40000.00)
+    a.add_employee(xavier)
+    a.add_employee(new_employee)
+    a.add_employee(old_employee)
     xavier.employee_performance(true)
-    old_employee.employee_performance(true)
-    new_employee.employee_performance(false)
+    old_employee.employee_performance(false)
+    new_employee.employee_performance(true)
+
     a.department_raise(14000.00)
     assert_equal 57000.00, xavier.salary
     assert_equal 57000.00, new_employee.salary
