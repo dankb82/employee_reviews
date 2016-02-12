@@ -1,5 +1,5 @@
 class Employee
-  attr_reader :name, :email, :phone, :salary, :review
+  attr_reader :name, :email, :phone, :salary, :review, :satisfactory
   def initialize(name, email, phone, salary)
     @name = name
     @email = email
@@ -10,5 +10,9 @@ class Employee
 
   def add_employee_review(review)
     @review = review
+  end
+
+  def employee_performance(boolean)
+    @satisfactory = boolean
   end
 end

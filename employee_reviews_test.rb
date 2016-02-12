@@ -62,4 +62,11 @@ class EmployeeReviews < Minitest::Test
     xavier = Employee.new("Xavier", "ProfX@marvel.com", "911", 50000.00)
     assert xavier.add_employee_review(employee_review)
   end
+  def test_employee_performance
+    a = Department.new("Marketing")
+    new_employee = Employee.new("Dan", "d@mail.com", "914", 50000.00)
+    old_employee = Employee.new("Ann", "ann@mail.com", "919", 4000.00)
+    assert new_employee.employee_performance(true)
+    refute old_employee.employee_performance(false)
+  end
 end
