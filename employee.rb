@@ -5,5 +5,6 @@ class Employee
     @email = email
     @phone = phone
     @salary = salary
+    
   end
 end
