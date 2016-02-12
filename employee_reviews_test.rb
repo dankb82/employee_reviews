@@ -70,4 +70,9 @@ class EmployeeReviews < Minitest::Test
     assert new_employee.satisfactory
     refute old_employee.satisfactory
   end
+
+  def test_give_employee_raise
+    new_employee = Employee.new("Dan", "d@mail.com", "914", 50000.00)
+    assert_equal  54000, new_employee.employee_raise(0.08)
+  end
 end

@@ -15,4 +15,8 @@ class Employee
   def employee_performance(boolean)
     @satisfactory = boolean
   end
+
+  def employee_raise(raise_amount)
+    @salary = (@salary * raise_amount) + @salary
+  end
 end
