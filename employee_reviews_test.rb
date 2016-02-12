@@ -40,6 +40,13 @@ class EmployeeReviews < Minitest::Test
     assert_equal new_employee.salary, 50000.00
   end
 
+  def test_can_get_a_department_name
+    a = Department.new("Marketing")
+    assert_equal a.name, "Marketing"
+  end
+
+
+
 
 
 
