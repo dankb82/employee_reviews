@@ -1,7 +1,7 @@
 require './employee'
 
 class Department
-  attr_reader :name, :staff
+  attr_reader :name, :staff, :review
   def initialize(department_name)
     @name = department_name
     @staff = []
@@ -15,7 +15,11 @@ class Department
    sum = 0
    @staff.each {|a| sum += a.salary}
    return sum
-   
- end
+  end
+
+  def add_employee_review(review)
+    @review = review
+  end
+
 
 end

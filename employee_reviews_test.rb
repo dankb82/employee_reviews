@@ -58,15 +58,8 @@ class EmployeeReviews < Minitest::Test
                        implements code that rarely needs to be revisited, and
                        is always willing to help others despite his heavy
                        workload. When Xavier leaves on vacation, everyone
-                       wishes he didn't have to go last year, the only concerns
-                       with Xavier's performance were around ownership. In the
-                       past twelve months, he has successfully taken full
-                       ownership of both Acme and Bricks, Inc. Aside from some
-                       false starts with estimates on Acme, clients are happy
-                       with his work and responsiveness, which is everything
-                       that his managers could ask for."
-    xavier = Employee.new("Xavier", "ProfX@marvel.com", "911", 50000.00, employee_review)
-    assert xavier
-
+                       wishes he didn't have to go."
+    xavier = Employee.new("Xavier", "ProfX@marvel.com", "911", 50000.00)
+    assert xavier.add_employee_review(employee_review)
   end
 end
