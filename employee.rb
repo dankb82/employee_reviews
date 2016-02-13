@@ -11,7 +11,6 @@ class Employee
 
   def add_employee_review(review)
     @review = review
-    byebug
   end
 
   def employee_performance(boolean)
