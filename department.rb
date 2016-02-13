@@ -22,19 +22,10 @@ class Department
     @review = review
   end
 
-  def department_raise(raise_amount)
-    raise_eligible = []
-    @staff.each do |e|
-      if e.satisfactory
-        raise_eligible << e
-      end
-    end
-    employee_amount = raise_amount / raise_eligible.length
-    raise_eligible.each do |r|
-      # byebug
-      r.salary = r.salary + employee_amount
-    end
-  end
 
+  def department_raise(raise_amount)
+    raise_eligible = @staff.select {|e| yield(e)}
+    raise_eligible.each {|e| e.salary += raise_amount / raise_eligible.length}
+  end
 
 end
