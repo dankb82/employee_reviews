@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require 'byebug'
-#Note: This line is going to fail first.
 require './department'
 
 class EmployeeReviews < Minitest::Test
@@ -77,7 +76,6 @@ class EmployeeReviews < Minitest::Test
     new_employee = Employee.new(name: "Dan", email: "d@mail.com", phone: "914", salary: 50000.00)
     assert_equal  54000, new_employee.employee_raise(0.08)
   end
-
 
   def test_department_raises_based_on_criteria
     a = Department.new("Marketing")

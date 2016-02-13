@@ -1,5 +1,6 @@
 require './employee'
 require 'byebug'
+
 class Department
   attr_reader :name, :staff, :review
 
@@ -21,7 +22,6 @@ class Department
   def add_employee_review(review)
     @review = review
   end
-
 
   def department_raise(raise_amount)
     raise_eligible = @staff.select {|e| yield(e)}
