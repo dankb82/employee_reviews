@@ -1,5 +1,4 @@
 require './employee'
-require 'byebug'
 
 class Department
   attr_reader :name, :staff, :review
@@ -23,9 +22,8 @@ class Department
     @review = review
   end
 
-  def department_raise(raise_amount)
+  def department_raise(alloted_amount)
     raise_eligible = @staff.select {|e| yield(e)}
-    raise_eligible.each {|e| e.salary += raise_amount / raise_eligible.length}
+    raise_eligible.each {|e| e.salary += alloted_amount / raise_eligible.length}
   end
-
 end

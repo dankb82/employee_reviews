@@ -1,4 +1,3 @@
-require 'byebug'
 
 class Employee
   attr_reader :name, :email, :phone, :review
@@ -35,10 +34,9 @@ class Employee
     negative = [/negative/i, /lazy/i, /bad/i, /stubborn/i, /(misses deadlines)/i,
                /late/i, /concerns/i, /difficulty/i, /struggles/i, /limitations/i,
                /inconsistent/i, /inefficient/i, /(not done well)/i, /poorly/i,
-                /badly/i, /rude/i, /(off topic)/i]
+                /badly/i, /rude/i, /(off topic)/i, /lack/i, /inadequate/i, /limitation/i, /(room for improvement)/i, ]
     positive.each {|r| positive_matches += 1 if @review.match(r)}
     negative.each {|r| negative_matches += 1 if @review.match(r)}
     @satisfactory = positive_matches > negative_matches
-    byebug
   end
 end

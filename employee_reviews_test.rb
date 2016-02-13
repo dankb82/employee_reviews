@@ -1,6 +1,5 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require 'byebug'
 require './department'
 
 private def negative_review_one
@@ -107,6 +106,6 @@ class EmployeeReviews < Minitest::Test
   def test_evaluate_employee_review
     xavier = Employee.new(name: "Xavier", email: "ProfX@marvel.com", phone: "911", salary: 70000.00)
     xavier.add_employee_review(positive_review_one)
-    assert_equal true, xavier.assess_review(xavier)
+    assert xavier.assess_review(xavier)
   end
 end
