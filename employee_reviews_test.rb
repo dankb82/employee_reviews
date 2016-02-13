@@ -46,10 +46,10 @@ class EmployeeReviews < Minitest::Test
   def test_total_department_salary
     a = Department.new("Marketing")
     new_employee = Employee.new(name: "Dan", email: "d@mail.com", phone: "914", salary: 50000.00)
-    old_employee = Employee.new(name: "Ann", email: "ann@mail.com", phone: "919", salary: 4000.00)
+    old_employee = Employee.new(name: "Ann", email: "ann@mail.com", phone: "919", salary: 40000.00)
     assert a.add_employee(new_employee)
     assert a.add_employee(old_employee)
-    assert_equal 54000.00, a.department_salary
+    assert_equal 90000.00, a.department_salary
   end
 
   def test_add_employee_review
@@ -89,7 +89,6 @@ class EmployeeReviews < Minitest::Test
     new_employee.employee_performance(true)
     old_employee.employee_performance(true)
     a.department_raise(14000.00) {|e| e.satisfactory == true && e.salary < 60000.00}
-    byebug
     assert_equal 70000.00, xavier.salary
     assert_equal 57000.00, new_employee.salary
     assert_equal 47000.00, old_employee.salary
