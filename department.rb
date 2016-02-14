@@ -13,7 +13,7 @@ class Department
   end
 
   def department_salary
-    @staff.reduce(0) {|sum, e| sum + e.salary}
+    @staff.reduce(0.0) {|sum, e| sum + e.salary}
   end
 
   def add_employee_review(review)

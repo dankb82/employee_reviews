@@ -65,6 +65,7 @@ class EmployeeReviews < Minitest::Test
     assert a.add_employee(new_employee)
     assert a.add_employee(old_employee)
     assert_equal 90000.00, a.department_salary
+    puts a.department_salary
   end
 
   def test_add_employee_review
