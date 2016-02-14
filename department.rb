@@ -1,5 +1,5 @@
 require './employee'
-require 'byebug'
+
 class Department
   attr_reader :name, :staff, :review
 
@@ -25,9 +25,3 @@ class Department
     raise_eligible.each {|e| e.salary += alloted_amount / raise_eligible.length}
   end
 end
-
-# def department_salary
-#  sum = 0
-#  @staff.each {|a| sum += a.salary}
-#  sum
-# end

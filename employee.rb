@@ -1,4 +1,4 @@
-require 'byebug'
+
 class Employee
   attr_reader :name, :email, :phone, :review
   attr_accessor :salary, :satisfactory
@@ -43,7 +43,6 @@ class Employee
       matches = @review.scan(r).count
       negative_matches += matches
     end
-    byebug
     @satisfactory = positive_matches > negative_matches
   end
 end
