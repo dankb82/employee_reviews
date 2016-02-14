@@ -1,4 +1,5 @@
 
+
 class Employee
   attr_reader :name, :email, :phone, :review
   attr_accessor :salary, :satisfactory
