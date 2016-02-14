@@ -18,7 +18,7 @@ new_employee = Employee.new(name, phone, email, salary )
 ```
 marketing.add_employee(employee)
 ```
-* Add text reviews to each employee using.
+* Add text reviews to each employee using:
 ```
 new_employee.add_employee_review(review)
 ```
