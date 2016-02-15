@@ -96,11 +96,11 @@ class EmployeeReviews < Minitest::Test
     a.add_employee(old_employee)
     xavier.employee_performance(true)
     new_employee.employee_performance(true)
-    old_employee.employee_performance(true)
+    old_employee.employee_performance(false)
     a.department_raise(14000.00) {|e| e.satisfactory == true && e.salary < 60000.00}
     assert_equal 70000.00, xavier.salary
-    assert_equal 57000.00, new_employee.salary
-    assert_equal 47000.00, old_employee.salary
+    assert_equal 64000.00, new_employee.salary
+    assert_equal 40000.00, old_employee.salary
   end
 
   def test_evaluate_employee_review
