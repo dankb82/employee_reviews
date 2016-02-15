@@ -1,7 +1,7 @@
 
 class Employee
-  attr_reader :name, :email, :phone, :review
-  attr_accessor :salary, :satisfactory
+  attr_reader :name, :email, :phone, :review, :satisfactory
+  attr_accessor :salary
 
   def initialize(name: nil, email: nil, phone: nil, salary: nil)
     @name = name
@@ -19,7 +19,7 @@ class Employee
   end
 
   def employee_raise(raise_percentage)
-    @salary = (@salary * raise_percentage) + @salary
+    @salary += (@salary * raise_percentage)
   end
 
   def assess_review(review)
@@ -43,6 +43,6 @@ class Employee
       matches = @review.scan(r).count
       negative_matches += matches
     end
-    @satisfactory = positive_matches > negative_matches
+    @satisfactory = (positive_matches > negative_matches)
   end
 end
